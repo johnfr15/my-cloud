@@ -4,8 +4,8 @@ const validate_signup = ( user ) =>
 {
     const schema = Joi.object({
         username: Joi.string().required(),
-        firstName: Joi.string(),
-        lastName: Joi.string(),
+        firstName: Joi.string().allow(''),
+        lastName: Joi.string().allow(''),
         email: Joi.string().email().required(),
         password: Joi.string().required(),
     });

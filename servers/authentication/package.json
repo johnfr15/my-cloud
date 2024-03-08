@@ -1,5 +1,5 @@
 {
-  "name": "NodeJs-from-scratch",
+  "name": "authentication-server",
   "version": "1.0.0",
   "main": "index.js",
   "author": "John",
@@ -19,6 +19,6 @@
     "passport-jwt": "^4.0.1"
   },
   "scripts": {
-    "start": "nodemon src --ignore ./db"
+    "start": "nodemon src"
   }
 }

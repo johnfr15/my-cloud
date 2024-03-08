@@ -3,11 +3,11 @@ const cookieParser = require('cookie-parser');
 const cors = require("cors");
 const express = require("express");
 const path = require('path');
-const { pathLog } = require("./logger");
-const { connect_mongodb } = require("./database/database.js");
 const auth = require('./middleware/auth.js');
 const authRouter = require('./routers/auth.js');
 const { handleError } = require('./utils/error');
+const { pathLog } = require("./utils/logger/index.js");
+const { connect_mongodb } = require("./utils/database/database.js");
 
 
 

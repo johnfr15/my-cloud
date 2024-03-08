@@ -1,12 +1,14 @@
-const { User, validate_signup, validate_signin } = require("../models/user");
+const  { User } = require("../models/user")
+const { validate_signup, validate_signin } = require("../utils/validations/auth");
 const { 
     createUser, 
     authenticate, 
     confirmAccount,
 } = require("../services/auth");
 const { mailForgottenPassword, mailConfirmationEmail } = require("../services/mail");
+const path = require('path');
 
-
+const { WEB_CLIENT_URI } = process.env
 
 const handleSignup = async (req, res, next) => 
 {
@@ -60,7 +62,7 @@ const handleLogin = async (req, res, next) =>
             secure: true, 
         }
         res.cookie('jwt', token, cookieOption);
-        res.status(200).redirect("/");
+        res.status(200).redirect( WEB_CLIENT_URI );
 
    } catch (error) {
 
@@ -104,17 +106,17 @@ const handleConfirmationEmail = async(req, res) =>
         const user = await User.findOne({ _id });
 
         if ( user === undefined )
-            return res.status(401).redirect('/register')
+            return res.status(401).redirect( path.join( WEB_CLIENT_URI, '/register') )
         if ( user.isConfirmed )
-            return res.status(401).redirect('/login')
+            return res.status(401).redirect( path.join( WEB_CLIENT_URI, '/login') )
         if ( Date.now() > user.tokenExpiration )
-            return res.status(401).redirect('/register')
+            return res.status(401).redirect( path.join( WEB_CLIENT_URI, '/register') )
         if ( user.tokenActivation !== secret )
-            return res.status(401).redirect('/register')
+            return res.status(401).redirect( path.join( WEB_CLIENT_URI, '/register') )
 
         await confirmAccount( user );
 
-        return res.status(200).redirect("/login");
+        return res.status(200).redirect( path.join( WEB_CLIENT_URI, "login" ) );
 
     } catch (error) {
 
