@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "start": "yarn ts-node src/server.ts"
+    "start": "vite --host"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
