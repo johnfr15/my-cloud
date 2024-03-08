@@ -1,0 +1,48 @@
+version: "3.5"
+services:
+
+  web-client:
+    build: clients/john
+    container_name: john-web-client
+    restart: always
+    env_file:                            
+      - clients/john/.env # NEED TO BE SETUP
+    ports:
+      - "80:5173"
+      - "443:5173" 
+    networks:
+      - john-net
+
+  authentication:
+    build: servers/authentication
+    container_name: john-authentication
+    restart: always
+    ports:
+      - 8100:8100
+    env_file:                             
+      - servers/authentication/.env # NEED TO BE SETUP
+    networks:
+      - john-net
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: "mongo:latest"
+    container_name: john-mongodb
+    restart: always
+    ports:
+      - 27017:27017
+    env_file:
+      - db/.env # NEED TO BE SETUP
+    volumes:
+      - dbdata:/data/db
+      - ./db/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+    networks:
+      - john-net
+
+networks:
+  john-net:
+
+volumes:
+  dbdata:
+    name: john-dbdata
