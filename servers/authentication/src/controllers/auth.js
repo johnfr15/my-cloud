@@ -24,7 +24,9 @@ const handleSignup = async (req, res, next) =>
         // 2. Find user
         const oldUser = await User.findOne({ email });
         if ( oldUser && oldUser.activated ) 
-            return res.status(409).send("User Already Exist. Please Login");
+            return res.status(409).json("User Already Exist. Please Login or choose a different email.");
+        if ( oldUser && oldUser.username === username ) 
+            return res.status(409).json("Username already taken. Please choose another one.");
 
         // 3. Signup user
         user = await createUser({ username, firstName, lastName, email, password });
