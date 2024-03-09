@@ -65,9 +65,9 @@ const SignupContainer = ( props: LoginContainerProps & any ) =>
             let message = 'An error occured'
 
             if ( error instanceof Error )
-                error.message
-            if ( [409, 500].includes(error.statusCode || error.status) )
                 message = error.message
+            else if ( [409, 500].includes(error.statusCode || error.status) )
+                message = await error.json()
 
             setErrorRegistering(message)
 
