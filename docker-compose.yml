@@ -1,18 +1,48 @@
 version: "3.5"
 services:
 
-  web-client:
-    build: clients/john
-    container_name: john-web-client
+  gateway:
+    build: servers/gateway
+    container_name: john-gateway
     restart: always
-    env_file:                            
-      - clients/john/.env # NEED TO BE SETUP
     ports:
-      - "80:5173"
-      - "443:5173" 
+      - 80:80
+      - 443:443
+    env_file:                             
+      - servers/gateway/.env # NEED TO BE SETUP
     networks:
       - john-net
 
+
+
+
+
+  # API
+
+
+
+
+
+  # APP
+  sample-ai:
+    build: clients/john
+    container_name: john-sample-ai
+    restart: always
+    environment:
+      - VITE_BASENAME=app
+      - VITE_APP_NAME=sample-ai
+    env_file:                            
+      - clients/john/.env # NEED TO BE SETUP
+    # ports:
+    #   - 3100:5173
+    networks:
+      - john-net
+
+
+
+
+
+  # AUTH
   authentication:
     build: servers/authentication
     container_name: john-authentication
@@ -26,6 +56,11 @@ services:
     depends_on:
       - mongodb
 
+
+
+
+
+  # DATABASE
   mongodb:
     image: "mongo:latest"
     container_name: john-mongodb
@@ -40,8 +75,12 @@ services:
     networks:
       - john-net
 
+
+
 networks:
   john-net:
+
+
 
 volumes:
   dbdata:
