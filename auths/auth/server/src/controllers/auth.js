@@ -8,7 +8,7 @@ const {
 const { mailForgottenPassword, mailConfirmationEmail } = require("../services/mail");
 const path = require('path');
 
-const { WEB_CLIENT_URI } = process.env
+const { SERVICE_BASE_PATH } = process.env
 
 const handleSignup = async (req, res, next) => 
 {
@@ -64,7 +64,7 @@ const handleLogin = async (req, res, next) =>
             secure: true, 
         }
         res.cookie('jwt', token, cookieOption);
-        res.status(200).redirect( WEB_CLIENT_URI );
+        res.status(200).redirect( SERVICE_BASE_PATH );
 
    } catch (error) {
 
@@ -100,7 +100,7 @@ const handleForgotPassword = async(req, res) =>
 
 
 
-const handleConfirmationEmail = async(req, res) =>
+const handleConfirmationEmail = async(req, res, next) =>
 {
     try {
 
@@ -108,17 +108,17 @@ const handleConfirmationEmail = async(req, res) =>
         const user = await User.findOne({ _id });
 
         if ( user === undefined )
-            return res.status(401).redirect( path.join( WEB_CLIENT_URI, '/register') )
+            return res.status(401).redirect( path.join( SERVICE_BASE_PATH, 'register') )
         if ( user.isConfirmed )
-            return res.status(401).redirect( path.join( WEB_CLIENT_URI, '/login') )
+            return res.status(401).redirect( path.join( SERVICE_BASE_PATH, 'login') )
         if ( Date.now() > user.tokenExpiration )
-            return res.status(401).redirect( path.join( WEB_CLIENT_URI, '/register') )
+            return res.status(401).redirect( path.join( SERVICE_BASE_PATH, 'register') )
         if ( user.tokenActivation !== secret )
-            return res.status(401).redirect( path.join( WEB_CLIENT_URI, '/register') )
+            return res.status(401).redirect( path.join( SERVICE_BASE_PATH, 'register') )
 
         await confirmAccount( user );
 
-        return res.status(200).redirect( path.join( WEB_CLIENT_URI, "login" ) );
+        return res.status(200).redirect( path.join( SERVICE_BASE_PATH, "login" ) );
 
     } catch (error) {
 

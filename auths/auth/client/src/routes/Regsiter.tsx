@@ -1,12 +1,12 @@
 import SignupLayout from "../components/Signup/layout/SignupLayout"
 import SignupContainer from "../components/Signup/container/SignupContainer"
 
-const { VITE_AUTHENTICATION_HOST } = import.meta.env
+const { VITE_SERVICE_BASE_PATH } = import.meta.env
 
 const Register = () => {
 
   return (
-    <SignupContainer url={`${ VITE_AUTHENTICATION_HOST }/auth/signup`} signinPath="/login">
+    <SignupContainer url={`${VITE_SERVICE_BASE_PATH}/signup`} signinPath="/login">
       <SignupLayout />
     </SignupContainer>
   )

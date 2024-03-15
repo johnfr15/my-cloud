@@ -4,18 +4,24 @@ const cors = require("cors");
 const express = require("express");
 const path = require('path');
 const auth = require('./middleware/auth.js');
-const authRouter = require('./routers/auth.js');
 const { handleError } = require('./utils/error');
 const { pathLog } = require("./utils/logger/index.js");
 const { connect_mongodb } = require("./utils/database/database.js");
+const { 
+  handleSignup, 
+  handleLogin, 
+  handleForgotPassword, 
+  handleConfirmationEmail,
+} = require("./controllers/auth");
 
 
 
 /***********************************|
 |              CONFIG               |
 |__________________________________*/
-connect_mongodb(); // Connect to 'authentication' database
 const app = express();
+connect_mongodb(); // Connect to 'authentication' database
+
 
 
 
@@ -39,9 +45,15 @@ app.use( express.static(path.join(__dirname, 'public')) );
 /***********************************|
 |             ROUTING               |
 |__________________________________*/
-app.use( '/auth', authRouter );
+app.get("/confirm/:_id/:secret", handleConfirmationEmail);
+app.get('*', (req, res) => res.sendFile( path.join(__dirname, 'public', 'index.html') ));
 
+app.post("/login", handleLogin);
+app.post("/signup", handleSignup);
+app.post("/forgot-password", handleForgotPassword);
+// app.post("/reset-password", handleResetPassword);
 
+  
 
 
 

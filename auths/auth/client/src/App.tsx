@@ -6,26 +6,27 @@ import {
 } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 import Login from "./routes/Login";
-import Root from "./routes/Root";
 import Register from "./routes/Regsiter";
 
-const { VITE_BASENAME, VITE_APP_NAME } = import.meta.env
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-            <Route path="/" element={<Root />}>
+            <Route path={`/`}>
                 <Route path="login" element={<Login />} />
                 <Route path="register" element={<Register />} />
             </Route>
-    ), 
-    { basename: `/${VITE_BASENAME}/${VITE_APP_NAME}` }
+    ),
+    { basename: import.meta.env.BASE_URL } 
 );
 
 const App = () => {
     return ( 
+    <>
+        {localStorage.setItem('chakra-ui-color-mode', 'dark')}
         <ChakraProvider>
             <RouterProvider router={router} /> 
         </ChakraProvider>
+    </>
     )
 }
 
