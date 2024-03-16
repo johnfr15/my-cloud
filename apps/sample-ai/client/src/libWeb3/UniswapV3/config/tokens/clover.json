@@ -1,0 +1,10 @@
+[
+  {
+    "address": "",
+    "chainId": 1024,
+    "decimals": 18,
+    "logoURI": "https://raw.githubusercontent.com/sushiswap/list/master/logos/token-logos/token/clv.jpg",
+    "name": "Wrapped Clover",
+    "symbol": "WCLV"
+  }
+]

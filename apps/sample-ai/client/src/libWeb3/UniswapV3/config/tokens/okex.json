@@ -1,0 +1,210 @@
+[
+  {
+    "address": "0x77Df6ebec3316792D4ea5bc0f8286c27905Aa8e8",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://static.bafang.com/cdn/explorer/okexchain/exchain_auctionk.png",
+    "name": "AUCTION",
+    "symbol": "AUCTION"
+  },
+  {
+    "address": "0x54e4622DC504176b3BB432dCCAf504569699a7fF",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://raw.githubusercontent.com/sushiswap/list/master/logos/token-logos/token/btc.jpg",
+    "name": "BTC",
+    "symbol": "BTC"
+  },
+  {
+    "address": "0x21cDE7E32a6CAF4742d00d44B07279e7596d26B9",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://raw.githubusercontent.com/sushiswap/list/master/logos/token-logos/token/dai.jpg",
+    "name": "DAI",
+    "symbol": "DAI"
+  },
+  {
+    "address": "0xabc732f6f69a519F6d508434481376B6221eb7d5",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://raw.githubusercontent.com/sushiswap/list/master/logos/token-logos/token/dot.jpg",
+    "name": "DOT",
+    "symbol": "DOT"
+  },
+  {
+    "address": "0x99970778E2715bBc9Cf8fb83D10dCBC2D2D551A3",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://static.coinall.ltd/cdn/explorer/okexchain/exchain_etck.png",
+    "name": "ETC",
+    "symbol": "ETC"
+  },
+  {
+    "address": "0xEF71CA2EE68F45B9Ad6F72fbdb33d707b872315C",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://raw.githubusercontent.com/sushiswap/list/master/logos/token-logos/token/eth.jpg",
+    "name": "ETH",
+    "symbol": "ETH"
+  },
+  {
+    "address": "0x3F8969Be2FC0770dCc174968e4B4ff146E0ACDaF",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://raw.githubusercontent.com/sushiswap/list/master/logos/token-logos/token/fil.jpg",
+    "name": "FIL",
+    "symbol": "FIL"
+  },
+  {
+    "address": "0x8D3573f24c0aa3819A2f5b02b2985dD82B487715",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://assets.coingecko.com/coins/images/12780/small/PdaW8Lb.png?1602500407",
+    "name": "DeFiner",
+    "symbol": "FIN"
+  },
+  {
+    "address": "0xd0C6821aba4FCC65e8f1542589e64BAe9dE11228",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://assets.coingecko.com/coins/images/15002/small/logo.dabc411c.png?1619402947",
+    "name": "FLUXK",
+    "symbol": "FLUX"
+  },
+  {
+    "address": "0xc05760d75E7F5Ad428a906674Ce7c7c82d003d01",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://static.bafang.com/cdn/explorer/okexchain/exchain_kinek.png",
+    "name": "KINE",
+    "symbol": "KINE"
+  },
+  {
+    "address": "0x9B99c3Ce751aA292320033f93a1376902d4bA58b",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://raw.githubusercontent.com/sushiswap/list/master/logos/token-logos/token/link.jpg",
+    "name": "LINK",
+    "symbol": "LINK"
+  },
+  {
+    "address": "0xfA520efC34C81bfC1E3DD48b7fE9fF326049f986",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://raw.githubusercontent.com/sushiswap/list/master/logos/token-logos/token/ltc.jpg",
+    "name": "LTC",
+    "symbol": "LTC"
+  },
+  {
+    "address": "0x8CD6e29d3686d24d3C2018CEe54621eA0f89313B",
+    "chainId": 66,
+    "decimals": 8,
+    "logoURI": "https://assets.coingecko.com/coins/images/1053/small/Nuls.png?1556868153",
+    "name": "Nuls",
+    "symbol": "NULS"
+  },
+  {
+    "address": "0xd1351Ec15E8511658C2Ba1e1e81e1E60aA39c9Cd",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://assets.coingecko.com/coins/images/11873/small/NerveNetwork.png?1595541544",
+    "name": "NerveNetwork",
+    "symbol": "NVT"
+  },
+  {
+    "address": "0xdF54B6c6195EA4d948D03bfD818D365cf175cFC2",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://static.bafang.com/cdn/explorer/okexchain/exchain_okb.png",
+    "name": "OKB",
+    "symbol": "OKB"
+  },
+  {
+    "address": "0x3212606F74Cc59656E1EC6f587FCA61bA3B85eb0",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://static.bafang.com/cdn/explorer/okexchain/exchain_sfgk.png",
+    "name": "SFG",
+    "symbol": "SFG"
+  },
+  {
+    "address": "0xaa27bADaa3C9ec9081b8f6C9cDd2bf375F143780",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://static.coinall.ltd/cdn/explorer/okexchain/exchain_shibk.png",
+    "name": "SHIB",
+    "symbol": "SHIB"
+  },
+  {
+    "address": "0x2218E0D5E0173769F5b4939a3aE423f7e5E4EAB7",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://raw.githubusercontent.com/sushiswap/list/master/logos/token-logos/token/sushi.jpg",
+    "name": "SUSHI",
+    "symbol": "SUSHI"
+  },
+  {
+    "address": "0x59D226BB0a4d74274D4354EBb6a0E1A1Aa5175B6",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://raw.githubusercontent.com/sushiswap/list/master/logos/token-logos/token/uni.jpg",
+    "name": "UNI",
+    "symbol": "UNI"
+  },
+  {
+    "address": "0xc946DAf81b08146B1C7A8Da2A851Ddf2B3EAaf85",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://raw.githubusercontent.com/sushiswap/list/master/logos/token-logos/token/usdc.jpg",
+    "name": "USDC",
+    "symbol": "USDC"
+  },
+  {
+    "address": "0xdCAC52E001f5bd413aa6ea83956438F29098166b",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://static.bafang.com/cdn/explorer/okexchain/exchain_usdk.png",
+    "name": "USDK",
+    "symbol": "USDK"
+  },
+  {
+    "address": "0x382bB369d343125BfB2117af9c149795C6C65C50",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://raw.githubusercontent.com/sushiswap/list/master/logos/token-logos/token/usdt.jpg",
+    "name": "USDT",
+    "symbol": "USDT"
+  },
+  {
+    "address": "0x506f731F7656e2FB34b587B912808f2a7aB640BD",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://raw.githubusercontent.com/sushiswap/list/master/logos/token-logos/token/btc.jpg",
+    "name": "WBTC",
+    "symbol": "WBTC"
+  },
+  {
+    "address": "0x7A47ab305b8a2A3F4020d13FA9EF73cDdCc0e7D4",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://assets.coingecko.com/coins/images/12477/small/s_wing_icon.png?1610631390",
+    "name": "Wing Token",
+    "symbol": "WING"
+  },
+  {
+    "address": "0x8F8526dbfd6E38E3D8307702cA8469Bae6C56C15",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://raw.githubusercontent.com/sushiswap/list/master/logos/token-logos/token/okt.jpg",
+    "name": "Wrapped OKExChain",
+    "symbol": "WOKT"
+  },
+  {
+    "address": "0xCD08D321f6Bc10a10f094e4b2E6C9b8bF9906401",
+    "chainId": 66,
+    "decimals": 18,
+    "logoURI": "https://static.bafang.com/cdn/explorer/okexchain/exchain_zksk.png",
+    "name": "ZKS",
+    "symbol": "ZKS"
+  }
+]

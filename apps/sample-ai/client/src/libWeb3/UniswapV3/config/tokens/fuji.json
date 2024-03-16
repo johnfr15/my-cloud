@@ -1,0 +1,10 @@
+[
+  {
+    "address": "0xd00ae08403B9bbb9124bB305C09058E32C39A48c",
+    "chainId": 43113,
+    "decimals": 18,
+    "logoURI": "https://cryptologos.cc/logos/avalanche-avax-logo.png?v=010",
+    "name": "Wrapped AVAX",
+    "symbol": "WAVAX"
+  }
+]
