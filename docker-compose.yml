@@ -1,62 +1,65 @@
 version: "3.5"
 services:
 
+  # INFRASTRUCTURE
   gateway:
-    build: servers/gateway
+    image: nginx
     container_name: john-gateway
     restart: always
     ports:
       - 80:80
       - 443:443
-    env_file:                             
-      - servers/gateway/.env # NEED TO BE SETUP
+    volumes:
+      - ./infrastructure/gateway/nginx.conf:/etc/nginx/nginx.conf:ro
     networks:
-      - john-net
-
-
-
+      - john-city
+    depends_on:
+      - auth
+      - sample-ai
+  
 
 
   # API
 
 
 
-
-
   # APP
   sample-ai:
-    build: clients/john
+    build: 
+      context: apps/sample-ai
+      args:
+       - SERVICE_BASE_PATH=/app/sample-ai
     container_name: john-sample-ai
     restart: always
-    environment:
-      - VITE_BASENAME=app
-      - VITE_APP_NAME=sample-ai
     env_file:                            
-      - clients/john/.env # NEED TO BE SETUP
-    # ports:
-    #   - 3100:5173
+      - apps/sample-ai/client/.env.production # NEED TO BE SETUP
+      - apps/sample-ai/server/.env # NEED TO BE SETUP
+    ports:
+      - 8101:80
     networks:
-      - john-net
-
-
+      - john-city
 
 
 
   # AUTH
-  authentication:
-    build: servers/authentication
-    container_name: john-authentication
+  auth:
+    build: 
+      context: auths/auth
+      args: 
+        - SERVICE_BASE_PATH=/auth
+    container_name: john-auth
     restart: always
+    environment:
+      - SERVICE_BASE_PATH=/auth
+    env_file:                            
+     - auths/auth/server/.env # NEED TO BE SETUP
+     - auths/auth/client/.env # NEED TO BE SETUP
     ports:
-      - 8100:8100
-    env_file:                             
-      - servers/authentication/.env # NEED TO BE SETUP
+      - 8100:80
     networks:
-      - john-net
+      - john-city
     depends_on:
       - mongodb
-
-
 
 
 
@@ -65,23 +68,23 @@ services:
     image: "mongo:latest"
     container_name: john-mongodb
     restart: always
-    ports:
-      - 27017:27017
     env_file:
       - db/.env # NEED TO BE SETUP
     volumes:
       - dbdata:/data/db
       - ./db/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
     networks:
-      - john-net
+      - john-city
 
 
 
 networks:
-  john-net:
+  john-city:
+    external: true
 
 
 
 volumes:
   dbdata:
     name: john-dbdata
+    external: true
