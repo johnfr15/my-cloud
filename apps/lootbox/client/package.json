@@ -1,0 +1,71 @@
+{
+  "name": "chest",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@chakra-ui/icons": "^2.0.11",
+    "@chakra-ui/react": "^2.3.7",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@ethersproject/providers": "^5.7.1",
+    "@metamask/detect-provider": "^1.2.0",
+    "@react-three/drei": "^9.40.0",
+    "@react-three/fiber": "^8.9.0",
+    "@react-three/postprocessing": "^2.7.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.62",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "@types/three": "^0.144.0",
+    "@web3-react/core": "^6.1.9",
+    "@web3-react/injected-connector": "^6.0.7",
+    "ethers": "^5.7.1",
+    "framer-motion": "^7.6.5",
+    "gsap": "^3.11.3",
+    "howler": "^2.2.3",
+    "leva": "^0.9.34",
+    "lil-gui": "^0.17.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.39.1",
+    "react-router-dom": "^6.22.3",
+    "react-scripts": "5.0.1",
+    "socket.io": "^4.5.4",
+    "socket.io-client": "^4.5.4",
+    "three": "^0.144.0",
+    "typescript": "^4.8.4",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "deploy": "react-scripts build",
+    "build": "BUILD_PATH=../server/public react-scripts build",
+    "test": "react-scripts test --passWithNoTests",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:8000",
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/howler": "^2.2.7"
+  }
+}
