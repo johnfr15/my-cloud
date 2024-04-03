@@ -39,6 +39,15 @@ services:
     networks:
       - john-city
 
+  lootbox:
+    image: johnf14/lootbox-app
+    container_name: john-lootbox
+    restart: always
+    ports:
+      - 8102:8000
+    networks:
+      - john-city
+
 
 
   # AUTH
