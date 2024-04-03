@@ -1,0 +1,1 @@
+export const smartContracts: { [key: string]: string } = {}
